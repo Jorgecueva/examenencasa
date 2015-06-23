@@ -1,0 +1,29 @@
+<%= form_for(@consultum) do |f| %>
+  <% if @consultum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consultum.errors.count, "error") %> prohibited this consultum from being saved:</h2>
+
+      <ul>
+      <% @consultum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Cliente %><br>
+    <%= f.text_field :Cliente %>
+  </div>
+  <div class="field">
+    <%= f.label :Marca %><br>
+    <%= f.text_field :Marca %>
+  </div>
+  <div class="field">
+    <%= f.label :anio %><br>
+    <%= f.date_select :anio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

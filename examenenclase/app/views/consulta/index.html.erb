@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>SISTEMA DE CONSULTA CORPORACION FLORES.</h1>
+<h1>Realizar consulta en Corporacion Flores</h1>
+<img width="350" src=toyota.jpg"/>
+<table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Marca</th>
+      <th>Anio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consulta.each do |consultum| %>
+      <tr>
+        <td><%= consultum.Cliente %></td>
+        <td><%= consultum.Marca %></td>
+        <td><%= consultum.anio %></td>
+        <td><%= link_to 'Show', consultum %></td>
+        <td><%= link_to 'Edit', edit_consultum_path(consultum) %></td>
+        <td><%= link_to 'Destroy', consultum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Hacer Consulta', new_consultum_path %>

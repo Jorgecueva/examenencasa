@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @consultum.Cliente %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @consultum.Marca %>
+</p>
+
+<p>
+  <strong>Anio:</strong>
+  <%= @consultum.anio %>
+</p>
+
+<%= link_to 'Edit', edit_consultum_path(@consultum) %> |
+<%= link_to 'Back', consulta_path %>
